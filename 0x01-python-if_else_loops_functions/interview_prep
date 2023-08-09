@@ -5,7 +5,7 @@ new node next = prev node ->next
 prev node->next = new node
 
 insert = 17
-list = 1,3,5,6,8,80
+list = 1,3,5,6,8,17,80
 
 or where new node data less than first data
 if temp data < prev data insert at beginning
