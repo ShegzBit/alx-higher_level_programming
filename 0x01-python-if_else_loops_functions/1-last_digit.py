@@ -8,6 +8,8 @@ if number < 0:
 while number >= 10:
     number %= 10
 
+if temp < 0:
+    number *= -1
 if number == 0:
     write = f"Last digit of {temp:d} is {number:d} and is 0"
 else:
