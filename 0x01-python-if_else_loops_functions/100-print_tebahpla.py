@@ -4,9 +4,9 @@ upper = False
 
 while i >= 97:
     if upper:
-        print(chr(i - 32), end="")
+        print("{}".format(chr(i - 32)), end="")
         upper = False
     else:
-        print(chr(i), end="")
+        print("{}".format(chr(i)), end="")
         upper = True
     i -= 1
