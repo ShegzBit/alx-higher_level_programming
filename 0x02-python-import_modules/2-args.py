@@ -5,7 +5,13 @@ av = sys.argv[1:]
 ac = len(av)
 i = 1
 
-arg = "argument." if ac == 0 else "arguments:"
+if ac == 1:
+    arg = "argument:"
+elif ac == 0:
+    arg = "arguments."
+else:
+    arg = "arguments:"
+
 if __name__ == "__main__":
     print(f"{ac} {arg}")
     for a in av:
