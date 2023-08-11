@@ -6,8 +6,8 @@ ac = len(av)
 i = 1
 
 arg = "argument." if ac == 0 else "arguments:"
-
-print(f"{ac} {arg}")
-for a in av:
-    print(f"{i}: {a}")
-    i += 1
+if __name__ == "__main__":
+    print(f"{ac} {arg}")
+    for a in av:
+        print(f"{i}: {a}")
+        i += 1
