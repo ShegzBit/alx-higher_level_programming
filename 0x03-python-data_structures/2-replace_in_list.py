@@ -23,7 +23,7 @@ if __name__ == "__main__":
     new_list = replace_in_list(my_list, 5, new_element)
     print(new_list)
     print(my_list)
-    
+
     new_list = replace_in_list(['a', 2, 'c'], 1, 'd')
     print(new_list)
 
