@@ -2,7 +2,7 @@
 def no_c(my_string):
     if my_string is None:
         return None
-    my_string = "".join([x for x in my_string if(not(x in "cC"))])
+    my_string = "".join([x for x in my_string if (not (x in "cC"))])
     return my_string
 
 
