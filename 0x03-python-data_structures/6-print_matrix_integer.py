@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if len(matrix) == 1:
+    if len(matrix) == 1 and len(matrix[0]) == 0:
         print()
         exit()
     for i in matrix:
@@ -20,4 +20,4 @@ if __name__ == "__main__":
 
     print_matrix_integer(matrix)
     print("--")
-    print_matrix_integer()
+    print_matrix_integer([[]])
