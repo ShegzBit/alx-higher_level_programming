@@ -1,0 +1,6 @@
+Get the linked list
+traverse it in reverse
+store new one into an array
+loop through to test if palindrome
+if at any point rev list value is different from linked list then return false
+else return true if loop is exited successfully
