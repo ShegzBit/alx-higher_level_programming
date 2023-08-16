@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-from functools import reduce
 
+def reduce(func, my_list):
+    result = 0
+    for i in my_list:
+        result = func(result, i)
+    return result
 
 def uniq_add(my_list=[]):
     result = reduce((lambda x, y: x + y), set(my_list))
