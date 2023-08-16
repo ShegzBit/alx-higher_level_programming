@@ -6,6 +6,7 @@ def reduce(func, my_list):
         result = func(result, i)
     return result
 
+
 def uniq_add(my_list=[]):
     result = reduce((lambda x, y: x + y), set(my_list))
     return result
