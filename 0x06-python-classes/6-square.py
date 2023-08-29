@@ -10,14 +10,8 @@ class Square:
     """A square Object that models the behaviour of a real square"""
     def __init__(self, size=0, position=(0, 0)):
         """Square constructor"""
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        elif size >= 0 and isinstance(size, int):
-            self.__size = size
-
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """Get the area of a sqaure"""
