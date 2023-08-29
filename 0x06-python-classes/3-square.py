@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+A Square class module that sets a private field size
+and has a method area that uses the size to generate
+and return the area
+"""
+
 
 class Square:
     """A square Object that models the behaviour of a real square"""
