@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Square module documentation"""
 
+
 class Square:
     """A Square class"""
     pass
