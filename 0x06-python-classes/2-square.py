@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+A Square class module with a initializer/constructor that
+takes a positive integer value and set it to a private
+field size
+"""
+
 
 class Square:
     """A Square class"""
