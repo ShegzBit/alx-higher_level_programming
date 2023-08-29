@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A Square object Module"""
 
 class Square:
     """A Square class"""
