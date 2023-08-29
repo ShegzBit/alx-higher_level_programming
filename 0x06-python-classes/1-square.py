@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""A module for a square class with a constructor
+That takes size and sets it as a private instance"""
+
 
 class Square:
     """A Square class"""
