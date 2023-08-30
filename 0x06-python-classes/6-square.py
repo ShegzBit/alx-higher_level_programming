@@ -29,14 +29,14 @@ class Square:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
-        elif size >= 0 and isinstance(size, int):
-            self.__size = size
+        self.__size = size
 
     def my_print(self):
         """Draws self.square on screen"""
         i = 0
 
-        print("\n" * self.__position[1], end="")
+        if self.__size > 0:
+            print("\n" * self.__position[1], end="")
         while i < self.__size:
             print(" " * self.__position[0] + "#" * self.__size)
             i += 1
@@ -71,5 +71,10 @@ if __name__ == "__main__":
 
     my_square_3 = Square(3, (3, 0))
     my_square_3.my_print()
+
+    print("--")
+
+    my_square_2 = Square(0, (10, 3))
+    my_square_2.my_print()
 
     print("--")
