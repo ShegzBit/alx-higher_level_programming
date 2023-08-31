@@ -61,6 +61,8 @@ class Square:
         """Draws self.square on screen"""
         i = 0
         new_list = list()
+        if self.__size == 0:
+            return ""
 
         if self.__size > 0:
             new_list.append("\n" * self.__position[1])
@@ -73,3 +75,13 @@ class Square:
         if self.__size == 0:
             new_list.append("\n")
         return "".join(new_list)
+
+
+if __name__ == "__main__":
+    my_square = Square(5, (0, 0))
+    print(my_square)
+
+    print("--")
+
+    my_square = Square(5, (4, 1))
+    print(my_square)
