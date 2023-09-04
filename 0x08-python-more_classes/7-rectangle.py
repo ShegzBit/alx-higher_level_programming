@@ -56,16 +56,8 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         my_square = []
 
-        _ps = type(self).print_symbol
-        if isinstance(_ps, list):
-            _ps = "".join(list(map(str, _ps)))
-        else:
-            _ps = str(_ps)
         for i in range(self.__height):
-            row = []
-            for j in range(self.__width):
-                row.append(_ps)
-            my_square.append("".join(row))
+            my_square.append(str(Rectangle.print_symbol) * self.__width)
         return "\n".join(my_square)
 
     def __repr__(self):
