@@ -49,8 +49,6 @@ class Rectangle:
 
     def __str__(self):
         """Returns an unofficial string of an object"""
-        my_square = []
-
-        for i in range(self.__height):
-            my_square.append("#" * self.__width)
-        return '\n'.join(my_square)
+        _w = self.__width
+        _h = self.__height
+        return "\n".join(["#" * _w for i in range(_h)])
