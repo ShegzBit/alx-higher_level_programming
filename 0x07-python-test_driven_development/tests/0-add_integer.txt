@@ -1,0 +1,53 @@
+=============================
+Test for Task 0
+=============================
+
+>>> import sys
+
+>>> sys.path.insert(1, '..')
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Numbers ``(int)``
+=================
+``add_integer`` Returns addition of additions of its two arguments
+b is set to 98 by default
+
+>>> add_integer(10)
+108
+
+b is set to 98 by default
+>>> add_integer(-10)
+88
+
+>>> add_integer(10, 10)
+20
+
+>>> add_integer(-35, 10)
+-25
+
+Numbers ``(float)``
+===================
+``add_integers`` ``type`` casts its argumenets to ``int`` before addition
+>>> add_integer(10.3)
+108
+
+>>> add_integer(-8.9)
+90
+
+>>> add_integer(10.3, 10.7)
+20
+
+>>> add_integer(-8.9, 8.3)
+0
+
+Wrong Types
+==================
+>>> add_integer("aaa", 2)
+Traceback (innermost last):
+TypeError: a must be an integer
+
+>>> add_integer(5, (1, 2,3))
+Traceback (most recent call last):
+TypeError: b must be an integer
+
