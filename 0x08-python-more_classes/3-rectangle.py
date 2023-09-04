@@ -52,7 +52,7 @@ class Rectangle:
         my_square = []
 
         if self.__height == 0 or self.__width == 0:
-            return "\n"
+            return ""
         i = 0
         while i < self.__height:
             if i < self.__height - 1:
