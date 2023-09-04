@@ -4,10 +4,14 @@
 
 class Rectangle:
     """A Rectangle class"""
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Instance initializer"""
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -51,6 +55,21 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         my_square = []
 
-        for i in range(self.__height)
-            my_square.append("#" * self.__width)
-        return '\n'.join(my_square)
+        i = 0
+        while i < self.__height:
+            if i < self.__height - 1:
+                my_square.append("#" * self.__width + "\n")
+            else:
+                my_square.append("#" * self.__width)
+            i += 1
+        return ''.join(my_square)
+
+    def __repr__(self):
+        """Returns an official str representation of an object"""
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Object destructor"""
+        print("Bye rectangle...")
+        if type(self).number_of_instances > 0:
+            type(self).number_of_instances -= 1
