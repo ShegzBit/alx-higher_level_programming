@@ -57,7 +57,7 @@ class Rectangle:
         my_square = []
 
         for i in range(self.__height):
-            my_square.append(str(Rectangle.print_symbol) * self.__width)
+            my_square.append(str(self.print_symbol) * self.__width)
         return "\n".join(my_square)
 
     def __repr__(self):
