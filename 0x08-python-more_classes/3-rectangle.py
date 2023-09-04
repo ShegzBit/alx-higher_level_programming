@@ -53,9 +53,6 @@ class Rectangle:
 
         i = 0
         while i < self.__height:
-            if i < self.__height - 1:
-                my_square.append("#" * self.__width + "\n")
-            else:
                 my_square.append("#" * self.__width)
             i += 1
-        return ''.join(my_square)
+        return '\n'.join(my_square)
