@@ -6,6 +6,7 @@ class Rectangle:
     """A Rectangle class"""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Instance initializer"""
@@ -55,14 +56,17 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         my_square = []
 
-        i = 0
-        while i < self.__height:
-            if i < self.__height - 1:
-                my_square.append("#" * self.__width + "\n")
-            else:
-                my_square.append("#" * self.__width)
-            i += 1
-        return ''.join(my_square)
+        _ps = type(self).print_symbol
+        if isinstance(_ps, list):
+            _ps = "".join(list(map(str, _ps)))
+        else:
+            _ps = str(_ps)
+        for i in range(self.__height):
+            row = []
+            for j in range(self.__width):
+                row.append(_ps)
+            my_square.append("".join(row))
+        return "\n".join(my_square)
 
     def __repr__(self):
         """Returns an official str representation of an object"""
@@ -73,3 +77,33 @@ class Rectangle:
         print("Bye rectangle...")
         if type(self).number_of_instances > 0:
             type(self).number_of_instances -= 1
+
+
+if __name__ == "__main__":
+    my_rectangle_1 = Rectangle(8, 4)
+    print(my_rectangle_1)
+    print("--")
+    my_rectangle_1.print_symbol = "&"
+    print(my_rectangle_1)
+    print("--")
+
+    my_rectangle_2 = Rectangle(2, 1)
+    print(my_rectangle_2)
+    print("--")
+    Rectangle.print_symbol = "C"
+    print(my_rectangle_2)
+    print("--")
+
+    my_rectangle_3 = Rectangle(7, 3)
+    print(my_rectangle_3)
+
+    print("--")
+
+    my_rectangle_3.print_symbol = ["C", "is", "fun!"]
+    print(my_rectangle_3)
+
+    print("--")
+
+    Rectangle.print_symbol = "C"
+    print(my_rectangle_2)
+    print("--")
