@@ -51,8 +51,6 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         my_square = []
 
-        if self.__height == 0 or self.__width == 0:
-            return ""
         i = 0
         while i < self.__height:
             if i < self.__height - 1:
