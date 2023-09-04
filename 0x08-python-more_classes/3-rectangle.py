@@ -51,6 +51,6 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         my_square = []
 
-        for i in range(self.__height)
+        for i in range(self.__height):
             my_square.append("#" * self.__width)
         return '\n'.join(my_square)
