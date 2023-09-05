@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-class LockedClass:
-    """Lcoked Class"""
+class lockedClass:
+    pass
