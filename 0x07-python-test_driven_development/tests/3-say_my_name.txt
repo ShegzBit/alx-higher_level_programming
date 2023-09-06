@@ -57,6 +57,9 @@ TypeError: last_name must be a string
 Traceback (innermost last):
 TypeError: first_name must be a string
 
+>>> _name()
+My name is  
+
 Pass a string containing whitespace
 ===================================
 >>> _name("Feranmi Awotubo")
@@ -70,3 +73,5 @@ My name is
 
 >>> _name("Fer   anmi", "Aw  otu  bo")
 My name is Fer   anmi Aw  otu  bo
+
+====================================
