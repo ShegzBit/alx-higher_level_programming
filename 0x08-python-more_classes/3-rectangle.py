@@ -51,4 +51,11 @@ class Rectangle:
         """Returns an unofficial string of an object"""
         _w = self.__width
         _h = self.__height
+        if _w == 0:
+            return ""
         return "\n".join(["#" * _w for i in range(_h)])
+
+
+if __name__ == "__main__":
+    my_rectangle = Rectangle(0, 4)
+    print(str(my_rectangle))
