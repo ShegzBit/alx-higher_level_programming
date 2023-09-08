@@ -9,6 +9,7 @@ class TestMaxInteger(unittest.TestCase):
     _max = max_integer
 
     def test_integers(self):
+        """Tests with integers"""
         _max = max_integer
         self.assertEqual(_max([1, 2, 4, 5, 13]), 13)
         self.assertEqual(_max([-1, -2, 0, -7]), 0)
@@ -23,7 +24,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_one_element(self):
         """Tests for a list of one element"""
         _max = max_integer
-        self.assertEqual(_max([4]), 8)
+        self.assertEqual(_max([4]), 4)
 
 if __name__ == "__main__":
     unittest.main()
