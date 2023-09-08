@@ -4,6 +4,8 @@ Test for Task 0
 
 >>> import sys
 
+>>> from numpy import nan
+
 >>> sys.path.insert(1, '..')
 
 >>> add_integer = __import__('0-add_integer').add_integer
@@ -41,6 +43,10 @@ Numbers ``(float)``
 >>> add_integer(-8.9, 8.3)
 0
 
+>>> add_integer(1.8e308, 5)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
 Wrong Types
 ==================
 >>> add_integer("aaa", 2)
@@ -51,3 +57,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: b must be an integer
 
+>>> add_integer(nan, 5)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
