@@ -3,6 +3,7 @@
 
 
 def matrix_mul(m_a, m_b):
+    """Matrix multiplication function"""
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
