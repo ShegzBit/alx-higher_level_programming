@@ -100,6 +100,6 @@ TypeError: text must be a string
 Traceback (innermost last):
 TypeError: text must be a string
 
-_ti()
+>>> _ti()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
