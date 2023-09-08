@@ -20,7 +20,3 @@ def text_indentation(text):
         elif (not is_indent) and i == ' ':
             print(i, end='')
         prev = i
-
-
-if __name__ == "__main__":
-    text_indentation("Holberton. School? How are you:    John")
