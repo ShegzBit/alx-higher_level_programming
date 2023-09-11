@@ -25,3 +25,16 @@ TypeError: name must be an integer
 >>> bg.area()
 Traceback (innermost last):
 Exception: area() is not implemented
+
+>>> class MyInt(int):
+...     pass
+...
+>>> x = MyInt(15)
+
+>>> bg.integer_validator("name", x)
+
+>>> x = MyInt(-12)
+
+>>> bg.integer_validator("age", x)
+Traceback (innermost last):
+ValueError: age must be greater than 0
