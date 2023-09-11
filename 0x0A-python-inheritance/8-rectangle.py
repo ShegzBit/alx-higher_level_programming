@@ -11,28 +11,35 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Validates value"""
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
 
+class Rectangle(BaseGeometry):
+    """A Rectangle subclass of BaseGeometry"""
+
+    def __init__(self, width, height):
+        """Constructor"""
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
+
+
 if __name__ == "__main__":
-    bg = BaseGeometry()
+    r = Rectangle(3, 5)
 
-    bg.integer_validator("my_int", 12)
-    bg.integer_validator("width", 89)
+    print(r)
+    print(dir(r))
+
     try:
-        bg.integer_validator("name", "John")
+        print("Rectangle: {} - {}".format(r.width, r.height))
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
 
     try:
-        bg.integer_validator("age", 0)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator("distance", -4)
+        r2 = Rectangle(4, True)
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
