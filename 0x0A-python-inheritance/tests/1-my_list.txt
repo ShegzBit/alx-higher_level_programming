@@ -36,3 +36,18 @@ Test for print sorted list
 
 >>> my.print_sorted()
 [2, 4, 6, 8, 10]
+
+>>> my = _ml([])
+
+>>> my.print_sorted()
+[]
+
+>>> my = _ml([1])
+
+>>> my.print_sorted()
+[1]
+
+>>> my = _ml([-2, 4, -90, -2, -89])
+
+>>> my.print_sorted()
+[-90, -89, -2, -2, 4]
