@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """Rebel int"""
     def __eq__(self, other):
         """Rebel =="""
         return super().__ne__(other)
