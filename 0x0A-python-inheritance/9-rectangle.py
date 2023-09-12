@@ -19,7 +19,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """A Rectangle subclass of BaseGeometry"""
- 
+
     def __init__(self, width, height):
         """Constructor"""
         super().integer_validator("width", width)
@@ -27,19 +27,17 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
+    def area(self):
+        """Returns area of rectangle self"""
+        return self.__width * self.__height
+
+    def __str__(self):
+        """Informal string representation of rectangle"""
+        return f'[Rectangle] {self.__width}/{self.__height}'
+
 
 if __name__ == "__main__":
     r = Rectangle(3, 5)
 
     print(r)
-    print(dir(r))
-
-    try:
-        print("Rectangle: {} - {}".format(r.width, r.height))
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        r2 = Rectangle(4, True)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+    print(r.area())
