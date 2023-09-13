@@ -5,7 +5,8 @@
 def read_file(filename=""):
     """Reads all data in a file"""
     with open(filename, encoding='utf-8') as f:
-        print(f.read())
+        file = f.read()
+        print(file)
 
 
 if __name__ == "__main__":
