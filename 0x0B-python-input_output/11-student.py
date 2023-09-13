@@ -35,5 +35,5 @@ class Student:
         Reloads data froma json into python object
         """
         for key, value in json.items():
-            if key in self.__dict__:
-                self.key = value
+            if type(key) is str:
+                setattr(self, key, value)
