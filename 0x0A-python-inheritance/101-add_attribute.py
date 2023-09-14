@@ -11,6 +11,14 @@ def is_mutable(cls):
 def add_attribute(cls, name, value):
     """Adds attribute name to cls"""
     if is_mutable(cls):
-        cls.name = value
+        if hasattr(cls, "__slots__") and cls.__slots__ == []:
+            cls.name = value
+        elif hasattr(cls, "__slots__") and name in cls.__slots__:
+            cls.name = value
+        elif hasattr(cls, "__slots__") and name not in cls.__slots__:
+            raise TypeError("can't add new attribute")
+
+        if not hasattr(cls, "__slots__"):
+            cls.name = value
     else:
         raise TypeError("can't add new attribute")
