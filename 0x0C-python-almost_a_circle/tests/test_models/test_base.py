@@ -89,3 +89,7 @@ class TestBase(ModTestCase):
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
     # Test for task 16, 17, 18
+
+
+if __name__ == "__main__":
+    unittest.main()

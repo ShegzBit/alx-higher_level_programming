@@ -107,7 +107,7 @@ class Base:
             _dict = obj.to_dictionary()
             dic_list.append(_dict)
 
-    def load_from_file(cls):
+    def load_from_file_csv(cls):
         """
         Loads from file
         """
