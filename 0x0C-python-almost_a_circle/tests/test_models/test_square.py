@@ -182,7 +182,7 @@ class ModTestCase(unittest.TestCase):
         s1 = Square(5)
         s2 = Square(5)
         self.assertEqual(s1.size, 5)
-        self.assertEqual(s1.id, 14)
+        self.assertEqual(s1.id, 38)
 
         s1.update(10)
         self.assertEqual(s1.id, 10)
@@ -225,7 +225,7 @@ class ModTestCase(unittest.TestCase):
         self.assertEqual(s2.to_dictionary(), _dict)
 
         s3 = Square(1, 2)
-        _dict = {'x': 2, 'y': 0, 'id': 16, 'size': 1}
+        _dict = {'x': 2, 'y': 0, 'id': 40, 'size': 1}
         self.assertEqual(s3.to_dictionary(), _dict)
 
     def test_9_all_setter_getters(self):
@@ -236,7 +236,7 @@ class ModTestCase(unittest.TestCase):
         self.assertEqual(s1.x, 0)
         self.assertEqual(s1.y, 0)
         self.assertEqual(s1.size, 1)
-        self.assertEqual(s1.id, 17)
+        self.assertEqual(s1.id, 41)
 
         s1.size = 12
         self.assertEqual(s1.size, 12)
