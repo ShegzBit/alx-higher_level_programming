@@ -84,3 +84,11 @@ class Base:
             obj = cls.create(**_dict)
             obj_list.append(obj)
         return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Uses python Turtle to draw shape
+        """
+        rect_size = len(list_rectangles)
+        square_size = len(list_squares)
