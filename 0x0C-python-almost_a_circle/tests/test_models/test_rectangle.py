@@ -16,10 +16,10 @@ class TestRectangle(unt.TestCase):
         Test call to super class
         """
         b_1 = Base()
-        self.assertEqual(b_1.id, 1)
+        self.assertEqual(b_1.id, 8)
 
         r_1 = Rectangle(10, 7)
-        self.assertEqual(r_1.id, 2)
+        self.assertEqual(r_1.id, 9)
 
         r_2 = Rectangle(10, 10, 0, 0, 13)
         self.assertEqual(r_2.id, 13)
@@ -357,9 +357,9 @@ class TestRectangle(unt.TestCase):
         self.assertEqual(r_1.to_dictionary(), _dict)
 
         r_2 = Rectangle(10, 2, 1, 9)
-        _dict = {'x': 1, 'y': 9, 'id': 21, 'height': 2, 'width': 10}
+        _dict = {'x': 1, 'y': 9, 'id': 28, 'height': 2, 'width': 10}
         self.assertEqual(r_2.to_dictionary(), _dict)
 
         r_3 = Rectangle(1, 2)
-        _dict = {'x': 0, 'y': 0, 'id': 22, 'height': 2, 'width': 1}
+        _dict = {'x': 0, 'y': 0, 'id': 29, 'height': 2, 'width': 1}
         self.assertEqual(r_3.to_dictionary(), _dict)

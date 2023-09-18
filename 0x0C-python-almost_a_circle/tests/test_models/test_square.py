@@ -36,14 +36,14 @@ class ModTestCase(unittest.TestCase):
         self.assertEqual(s1.height, 1)
         self.assertEqual(s1.x, 1)
         self.assertEqual(s1.y, 1)
-        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1.id, 30)
 
         s2 = Square(1, 1, 0)
         self.assertEqual(s2.x, 1)
         self.assertEqual(s2.y, 0)
         self.assertEqual(s2.width, 1)
         self.assertEqual(s2.height, 1)
-        self.assertEqual(s2.id, 2)
+        self.assertEqual(s2.id, 31)
 
         s3 = Square(2, 3, 1, 10)
         self.assertEqual(s3.id, 10)
@@ -106,13 +106,13 @@ class ModTestCase(unittest.TestCase):
         Tests returned str
         """
         s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (3) 0/0 - 5")
+        self.assertEqual(str(s1), "[Square] (32) 0/0 - 5")
 
         s2 = Square(2, 2)
-        self.assertEqual(str(s2), "[Square] (4) 2/0 - 2")
+        self.assertEqual(str(s2), "[Square] (33) 2/0 - 2")
 
         s3 = Square(3, 1, 3)
-        self.assertEqual(str(s3), "[Square] (5) 1/3 - 3")
+        self.assertEqual(str(s3), "[Square] (34) 1/3 - 3")
 
         s4 = Square(3, 1, 3, 1)
         self.assertEqual(str(s4), "[Square] (1) 1/3 - 3")
@@ -182,7 +182,7 @@ class ModTestCase(unittest.TestCase):
         s1 = Square(5)
         s2 = Square(5)
         self.assertEqual(s1.size, 5)
-        self.assertEqual(s1.id, 38)
+        self.assertEqual(s1.id, 43)
 
         s1.update(10)
         self.assertEqual(s1.id, 10)
@@ -225,7 +225,7 @@ class ModTestCase(unittest.TestCase):
         self.assertEqual(s2.to_dictionary(), _dict)
 
         s3 = Square(1, 2)
-        _dict = {'x': 2, 'y': 0, 'id': 40, 'size': 1}
+        _dict = {'x': 2, 'y': 0, 'id': 45, 'size': 1}
         self.assertEqual(s3.to_dictionary(), _dict)
 
     def test_9_all_setter_getters(self):
@@ -236,7 +236,7 @@ class ModTestCase(unittest.TestCase):
         self.assertEqual(s1.x, 0)
         self.assertEqual(s1.y, 0)
         self.assertEqual(s1.size, 1)
-        self.assertEqual(s1.id, 41)
+        self.assertEqual(s1.id, 46)
 
         s1.size = 12
         self.assertEqual(s1.size, 12)
