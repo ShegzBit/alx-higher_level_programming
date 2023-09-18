@@ -66,3 +66,21 @@ class Base:
             dummy = Square(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load instances from file
+        """
+        from os import path
+        filename = cls.__name__ + ".json"
+        if not path.exists(filename):
+            return []
+        with open(filename, encoding='utf-8') as f:
+            json_string_list = f.read()
+        dict_list = Base.from_json_string(json_string_list)
+        obj_list = []
+        for _dict in dict_list:
+            obj = cls.create(**_dict)
+            obj_list.append(obj)
+        return obj_list
