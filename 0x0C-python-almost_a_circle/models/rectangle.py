@@ -99,8 +99,10 @@ class Rectangle(Base):
         Draws rectangle on screen
         """
 
+        if self.height > 0:
+            print(self.y * "\n", end="")
         for i in range(self.__height):
-            print(self.__width * '#')
+            print(self.x * " " + self.__width * '#')
 
     def __str__(self):
         """
@@ -111,3 +113,36 @@ class Rectangle(Base):
         _width = self.__width
         _height = self.__height
         return f'[Rectangle] ({self.id}) {_x}/{_y} - {_width}/{_height}'
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the objects of the class
+        """
+        size = len(args)
+
+        if size > 0:
+            self.id = args[0]
+        if size > 1:
+            self.width = args[1]
+        if size > 2:
+            self.height = args[2]
+        if size > 3:
+            self.x = args[3]
+        if size > 4:
+            self.y = args[4]
+
+        if size < 1:
+            for key, arg in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, arg)
+
+    def to_dictionary(self):
+        """
+        Parses the attributes of a class instance into a dictionary
+        """
+        _id = self.id
+        width = self.width
+        _height = self.height
+        _x = self.x
+        _y = self.y
+        return {"id": _id, "width": width, "height": _height, "x": _x, "y": _y}
