@@ -92,3 +92,24 @@ class Base:
         """
         rect_size = len(list_rectangles)
         square_size = len(list_squares)
+
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes data to csv
+        """
+        name = cls.__name__
+        filename = name + ".csv"
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write('[]')
+
+        dict_list = []
+        for obj in list_objs:
+            _dict = obj.to_dictionary()
+            dic_list.append(_dict)
+
+    def load_from_file(cls):
+        """
+        Loads from file
+        """
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.read()
