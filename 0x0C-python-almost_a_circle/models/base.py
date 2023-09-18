@@ -44,3 +44,25 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(write_list)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Converts json string to dictionary
+        """
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Creates an instance from a dictionary
+        """
+        from models.square import Rectangle, Square
+        if cls.__name__ == "Rectangle":
+            dummy = Rectangle(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = Square(1)
+        dummy.update(**dictionary)
+        return dummy

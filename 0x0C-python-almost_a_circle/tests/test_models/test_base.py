@@ -88,3 +88,4 @@ class TestBase(ModTestCase):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
+    # Test for task 16, 17, 18
