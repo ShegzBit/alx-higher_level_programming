@@ -93,23 +93,55 @@ class Base:
         rect_size = len(list_rectangles)
         square_size = len(list_squares)
 
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """
         Serializes data to csv
         """
+        import csv
+
         name = cls.__name__
         filename = name + ".csv"
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write('[]')
+        if list_objs is None:
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write('[]')
 
         dict_list = []
         for obj in list_objs:
             _dict = obj.to_dictionary()
-            dic_list.append(_dict)
+            dict_list.append(_dict)
+        csv_super_list = []
+        for _dict in dict_list:
+            csv_list = []
+            csv_list.append(_dict.get("id"))
+            if name == "Rectangle":
+                csv_list.append(_dict.get("width"))
+                csv_list.append(_dict.get("height"))
+            else:
+                csv_list.append(_dict.get("size"))
+            csv_list.append(_dict.get("x"))
+            csv_list.append(_dict.get("y"))
+            csv_super_list.append(csv_list)
+            with open(filename, 'w') as f:
+                csv_f = csv.writer(f)
+                for csv_list in csv_super_list:
+                    csv_f.writerow(csv_list)
 
+    @classmethod
     def load_from_file_csv(cls):
         """
         Loads from file
         """
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.read()
+        import csv
+
+        name = cls.__name__
+        filename = name + ".csv"
+        obj_list = []
+        with open(filename, 'r', encoding='utf-8') as f:
+            csv_f = csv.reader(f)
+            for data in csv_f:
+                new_data = list(map(lambda x: int(x), data))
+                obj = cls(1, 1)
+                obj.update(*new_data)
+                obj_list.append(obj)
+        return obj_list
