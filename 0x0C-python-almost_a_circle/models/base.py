@@ -3,6 +3,9 @@
 Base Model class
 """
 import json
+import turtle as tt
+from random import choice
+from time import sleep
 
 
 class Base:
@@ -145,3 +148,48 @@ class Base:
                 obj.update(*new_data)
                 obj_list.append(obj)
         return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draws a the rectangles and square to screen
+        """
+
+        colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+        position = [-100, 0, 100, 200, 300, 400]
+        s = tt.getscreen()
+        pen = tt.Turtle()
+        tt.title("Here Goes the Images of our rectangle instances")
+        for i, _rect in enumerate(list_rectangles):
+            rect_color = choice(colors)
+            pen.begin_fill()
+            pen.penup()
+            pen.goto(_rect.x + position[i], _rect.y + position[i])
+            pen.pendown()
+            for pos in range(4):
+                pen.pen(pensize=3, fillcolor=rect_color)
+                pen.speed(1)
+                if pos % 2 == 0:
+                    side = _rect.width
+                else:
+                    side = _rect.height
+                pen.forward(side)
+                pen.right(90)
+            pen.end_fill()
+        tt.title("Take your time and enjoy the canvas")
+        sleep(3)
+        tt.title("Now for the squares")
+        pen.reset()
+        for i, _square in enumerate(list_squares):
+            square_color = choice(colors)
+            pen.begin_fill()
+            pen.penup()
+            pen.goto(_square.x + position[i], _square.y + position[i])
+            pen.pendown()
+            for pos in range(4):
+                pen.pen(pensize=3, fillcolor=rect_color)
+                pen.speed(1)
+                pen.forward(_square.size)
+                pen.right(90)
+            pen.end_fill()
+        sleep(5)
