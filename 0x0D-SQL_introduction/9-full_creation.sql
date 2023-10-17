@@ -1,7 +1,7 @@
 -- creates a full table `second_table and adds rows to it
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
-	name VARCHAR(25),
+	name VARCHAR(256),
 	score INT
 );
 
