@@ -3,10 +3,7 @@
 const dict = require('./101-data.js').dict;
 
 const id = Object.keys(dict);
-const occurence = [];
-id.forEach(id => {
-  if (!(dict[id] in occurence)) { occurence.push(dict[id]); }
-});
+const occurence = new Set(Object.values(dict));
 
 function createDict (keyList, values) {
   const newDict = {};
