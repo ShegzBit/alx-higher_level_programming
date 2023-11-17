@@ -18,4 +18,5 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    f"{1}: {session.query(Base).order_by(Base.id).first().name}"
+    first = session.query(State).order_by(State.id).first()
+    print("Nothing") if first is None else print(f"{1}: {first.name}")
