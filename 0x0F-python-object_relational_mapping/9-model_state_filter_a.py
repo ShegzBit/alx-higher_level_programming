@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     states = (session.query(State).filter
-                           (State.name.ilike("%a%")).order_by(State.id).all())
+                           (State.name.contains("a")).order_by(State.id).all())
 
     for count, state in enumerate(states):
         print(f"{count + 1}: {state.name}")
