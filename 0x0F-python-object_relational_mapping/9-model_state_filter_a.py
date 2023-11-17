@@ -8,6 +8,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from sqlalchemy import func
 import sys
 
 
@@ -19,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     states = (session.query(State).filter
-                           (State.name.like("%a%")).order_by(State.id).all())
+                           (func.lower(State.name).like("%a%")).order_by(State.id).all())
 
     for count, state in enumerate(states):
         print(f"{count + 1}: {state.name}")
