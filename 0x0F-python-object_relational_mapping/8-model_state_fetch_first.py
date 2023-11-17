@@ -18,4 +18,4 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    print(f"{1}: {session.query(State).order_by(State.id).first().name}")
+    f"{1}: {session.query(Base).order_by(Base.id).first().name}"
