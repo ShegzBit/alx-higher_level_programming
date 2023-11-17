@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          db=db, port=3306, charset="utf8")
     cur = db.cursor()
 
-    command = ("SELECT * FROM states WHERE name = '{}' ORDER BY id\
+    command = ("SELECT * FROM states WHERE BINARY name LIKE '{}' ORDER BY id\
  ASC".format(name))
 
     cur.execute(command)
