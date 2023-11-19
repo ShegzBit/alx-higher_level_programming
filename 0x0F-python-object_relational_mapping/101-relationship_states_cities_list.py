@@ -18,13 +18,14 @@ if __name__ == "__main__":
 
     session = Session()
 
-    check = session.query
+    rows = (session.query(City.id, City.state_id, City.name, State.name).
+            join(State, State.id == City.state_id).
+            order_by(State.id, City.id))
+    states = []
 
-    states = check(State.id, State.name).order_by(State.id)
-    for state in states.all():
-        cities = (check(City.id, City.name).
-                  filter_by(state_id=state.id).order_by(City.id))
-        print(f"{state[0]}: {state[1]}")
-        for city in cities.all():
-            print(f"\t{city[0]}: {city[1]}")
-    session.close()
+    for c_id, s_id, cn, sn in rows:
+        if sn in states:
+            print(f"\t{c_id}: {cn}")
+        else:
+            print(f"{s_id}: {sn}")
+            states.append(sn)
