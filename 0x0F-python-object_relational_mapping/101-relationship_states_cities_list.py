@@ -18,9 +18,11 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State.id, State.name).order_by(State.id)
+    check = session.query
+
+    states = check(State.id, State.name).order_by(State.id)
     for state in states.all():
-        cities = (session.query(City.id, City.name).
+        cities = (check(City.id, City.name).
                   filter_by(state_id=state.id).order_by(City.id))
         print(f"{state[0]}: {state[1]}")
         for city in cities.all():
