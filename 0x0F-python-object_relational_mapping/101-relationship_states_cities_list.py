@@ -18,14 +18,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    rows = (session.query(City.id, City.state_id, City.name, State.name).
-            join(State, State.id == City.state_id).
-            order_by(State.id, City.id))
-    states = []
+    states = session.query(State).order_by(State.id)
 
-    for c_id, s_id, cn, sn in rows:
-        if sn in states:
-            print(f"\t{c_id}: {cn}")
-        else:
-            print(f"{s_id}: {sn}")
-            states.append(sn)
+    for state in states:
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"\t{city.id}: {city.name}")
