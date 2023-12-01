@@ -17,4 +17,3 @@ if __name__ == "__main__":
     res = req.get(url, headers=header)
     json = res.json()
     print(json.get('id'))
-
