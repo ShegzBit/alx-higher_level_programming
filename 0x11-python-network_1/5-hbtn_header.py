@@ -8,6 +8,7 @@ X-Request-Id in the response header
 import requests as req
 import sys
 
-url = sys.argv[1]
-res = req.get(url)
-print(res.headers.get('X-Request-Id'))
+if __name__ == "__main__":
+    url = sys.argv[1]
+    res = req.get(url)
+    print(res.headers.get('X-Request-Id'))
