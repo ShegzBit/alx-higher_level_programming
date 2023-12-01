@@ -8,8 +8,9 @@ import urllib.request
 import urllib.parse
 import sys
 
-url, email = sys.argv[1:]
-payload = {'email': email}
-payload = urllib.parse.urlencode(payload).encode('ascii')
-with urllib.request.urlopen(url, payload) as response:
-    print(response.read().decode('utf-8'))
+if __name__ == "__main__"
+    url, email = sys.argv[1:]
+    payload = {'email': email}
+    payload = urllib.parse.urlencode(payload).encode('ascii')
+    with urllib.request.urlopen(url, payload) as response:
+        print(response.read().decode('utf-8'))
