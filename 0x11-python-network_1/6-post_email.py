@@ -7,8 +7,8 @@ a parameter, and finally displays the body of the response.
 import sys
 import requests as req
 
-url, email = sys.argv[1:]
-payload = {"email": email}
 if __name__ == "__main__":
+    url, email = sys.argv[1:]
+    payload = {"email": email}
     res = req.post(url, data=payload)
     print(res.text)
