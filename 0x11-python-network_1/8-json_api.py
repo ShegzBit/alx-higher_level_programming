@@ -7,16 +7,14 @@ import requests as req
 import sys
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/seach_user"
-    search = sys.argv[1] if len(sys.argv) > 2 else ""
-    payload = {"q": search}
-    res = req.post(url, data=payload)
+    url = "http://0.0.0.0:5000/search_user"
+    q = sys.argv[1] if len(sys.argv) > 1 else ""
+    res = req.post(url, data={"q": q})
     try:
-        my_dict = res.json()
-    except Exception as e:
+        result = res.json()
+        if 'id' in result and 'name' in result:
+            print (f"[{result.get('id')}] {result.get('name')}")
+        else:
+            print("No result")
+    except Exception:
         print("Not a valid JSON")
-        exit(0)
-    if not my_dict:
-        print("No result")
-        exit(0)
-    print(f"[{my_dict.get('id')}] my_dict.get('name')")
