@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         result = res.json()
         if 'id' in result and 'name' in result:
-            print (f"[{result.get('id')}] {result.get('name')}")
+            print(f"[{result.get('id')}] {result.get('name')}")
         else:
             print("No result")
     except Exception:
