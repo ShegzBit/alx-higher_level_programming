@@ -7,13 +7,13 @@ import requests as req
 import sys
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/search_user"
+    url = "http://0.0.0.0:5000/seach_user"
     search = sys.argv[1] if len(sys.argv) > 2 else ""
     payload = {"q": search}
     res = req.post(url, data=payload)
     try:
         my_dict = res.json()
-    except req.json.JSONDecodeError as e:
+    except Exception as e:
         print("Not a valid JSON")
         exit(0)
     if not my_dict:
