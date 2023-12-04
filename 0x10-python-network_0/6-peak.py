@@ -18,8 +18,8 @@ def find_peak(integers):
         i = 0
         while i < len(integers):
             if i - 1 >= 0 and i + 1 <= len(integers) - 1:
-                if (integers[i] >= integers[i - 1] and
-                        integers[i] >= integers[i + 1]):
+                if (integers[i] > integers[i - 1] and
+                        integers[i] > integers[i + 1]):
                     real_value = integers[i]
                     break
             elif i - 1 < 0:
