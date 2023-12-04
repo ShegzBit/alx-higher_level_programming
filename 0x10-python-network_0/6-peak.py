@@ -25,6 +25,6 @@ def find_peak(integers):
             elif i - 1 < 0:
                 if integers[i] >= integers[i - 1]:
                     fallback.append(integers[i])
-            i += 1
+            i += 2
 
         return (real_value if real_value else fallback[-1])
