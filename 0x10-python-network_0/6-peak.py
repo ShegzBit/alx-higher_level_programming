@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python
 """
 method that finds the in unsorted list
 """
