@@ -8,8 +8,7 @@ request.get(apiUrl, (err, res, body) => {
   const users = {};
   JSON.parse(body).forEach(task => {
     const id = task.userId;
-    if (!users[id] && task.completed) { users[id] = 1; }
-    if (task.completed) { users[id] += 1; }
+    if (!users[id] && task.completed) { users[id] = 1; } else if (task.completed) { users[id] += 1; }
   });
   console.log(users);
 });
